@@ -62,3 +62,27 @@ sequenceDiagram
     System->>DB: 재고 차감 및 로그 기록
     DB-->>System: 성공 응답
     System-->>Worker: 완료 메시지 및 잔량 표시
+```
+
+## 4. Specific Requirements
+
+### 4.1 Functional Requirements
+
+| ID | SOURCE | Functional Requirement Description | Priority |
+| :--- | :--- | :--- | :--- |
+| **REQ-FUNC-001** | User Story | 부분 일치 검색 기능을 제공해야 한다. | Must |
+| **REQ-FUNC-002** | User Story | 창고 내 번지 정보를 수정할 수 있어야 한다. | Must |
+
+---
+
+## 5. Appendix
+
+### 5.1 Interaction Sequence
+
+```mermaid
+sequenceDiagram
+    Worker->>System: 품번 검색
+    System->>DB: 조회
+    DB-->>System: 결과
+    System-->>Worker: 재고 표시
+
